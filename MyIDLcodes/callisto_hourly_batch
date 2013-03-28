@@ -1,3 +1,11 @@
+:: Name: callisto_hourly_batch
+::
+:: Author: Eoin Carley (TCD)
+::
+:: Purpose: Script handed to idl in callisto_hourly.bat. It passes the commands to compile
+::	        and run codes in idl
+:: 
+:: Last edit: 2013-Mar-28 (Eoin Carley) -Clean up
 
 
 cd, 'C:\MyIDLcodes'
@@ -19,9 +27,9 @@ cd, 'C:\MyIDLcodes'
 .rnew create_png_v3.pro
 create_png_v3
 
-
-cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\
-spawn,'move /y *.png* C:\Inetpub\wwwroot\data\realtime\callisto\png\'
+root = 'C:\Inetpub\wwwroot\data\realtime\callisto'
+cd, root+'\fts\'
+spawn,'move /y *.png* '+root+'\png\'
 
 
 cd, 'c:\Inetpub\wwwroot\webcam'

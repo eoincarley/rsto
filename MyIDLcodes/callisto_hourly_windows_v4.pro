@@ -181,7 +181,7 @@ IF n_elements(list) gt 0 THEN BEGIN
   start_spectra_time = latest_time - 4500.0
   
   index_start = closest(file_times, start_spectra_time)
-  stop
+ 
   radio_spectro_fits_read, list[index_start], z, x, y
   ;z is a 2D data array, x is 1D array of time values, y is 1D array of frequency values
 

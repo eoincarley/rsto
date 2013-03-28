@@ -27,7 +27,6 @@ pro callisto_goes_v3, backg=backg
 ;      - 08-Jan-2013 (E.Carley) Change to realtime fts folder into which live data is written. Need change in
 ;                               findfile argument to take into account ALL receiver .fts are in the one folder
 
-;Git testing !!!!!!!!!!!!!!!!!!!!!
 ;=========Get today's date in correct format========
 get_utc,ut
 today = time2file(ut,/date)
