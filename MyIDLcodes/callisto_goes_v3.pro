@@ -1,64 +1,3 @@
-pro stitch_spectra_day, receiver, sunrise, sunset, z, x, y
- 
-; Name: sitch_spectra_day
-;
-;   Purpose:
-;   -To stitch together all spectra in input folder and between the input times given. 
-;
-; Input parameters:
-;   -receiver (string): The receiver for which .fts files are to be searched
-;   -sunrise (string): The start time of the stitch. Format: YYYYMMDD_HHMMSS
-;   -sunset (string): The end time of the stitch. Format: YYYYMMDD_HHMMSS
-;
-; Keywords:
-;   -None
-;
-; Outputs:
-;   -z (float array): The dynamic spectra between desired times
-;   -x (float array): The time array of desired times
-;   -y (float_array): The frequency array of stitched spectra
-;
-;   Calling sequence example:
-;   -stitch_spectra_day,'01','20110101_081000','20110101_191000',z,x,y
-;
-;   Last modified:
-;   -10-Nov-2011 (E.Carley) Just a clean up....
-;   -08-Jan-2013 (E.Carley) v3 implemented Change to realtime fts folder into which live data is written. Need change in
-;                           findfile argument to take into account ALL receiver .fts are in the one folder
-cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\';+folder
-
-
-  times = anytim(file2time(findfile('BIR*'+receiver+'.fit')),/utime)
-
-  ;sunrise must be in the format YYYYMMDD_HHMMSS
-  index_sunrise = where(times gt anytim(file2time(sunrise),/utime))
-  sunriseFilePos = index_sunrise[0]
-
-  ;sunset must be in the format YYYYMMDD_HHMMSS
-  index_sunset = where(times lt anytim(file2time(sunset),/utime))
-  sunsetFilePos = index_sunset[n_elements(index_sunset)-1]
-
-;=======Dynamic Spectra of entire day===========================
-list = findfile('BIR*'+receiver+'.fit')
-
-  radio_spectro_fits_read,list[sunriseFilePos],z,x,y ;start value for z ad x
-    ;z is a 2D data array, x is ID array time values, y is 1D array of frequency values
-    
-     backg=make_daily_background(receiver)
-     z = temporary(z) - backg
-   
-    ;for loop to create dynamic spectra of entire day
-    FOR i = sunriseFilePos+ 1, sunsetFilePos, 1 DO BEGIN 
-        filename = list[i]
-        radio_spectro_fits_read,filename,runningZ,runningX,y
-      
-        runningZ = temporary(runningZ) - backg
-        z = [z,runningZ]
-        x = [x,runningX]       
-    ENDFOR
-
-END
-
 pro callisto_goes_v3, backg=backg
 
 ;   Name: callisto_goes_v2
@@ -88,6 +27,7 @@ pro callisto_goes_v3, backg=backg
 ;      - 08-Jan-2013 (E.Carley) Change to realtime fts folder into which live data is written. Need change in
 ;                               findfile argument to take into account ALL receiver .fts are in the one folder
 
+;Git testing !!!!!!!!!!!!!!!!!!!!!
 ;=========Get today's date in correct format========
 get_utc,ut
 today = time2file(ut,/date)
@@ -220,3 +160,65 @@ print,'callisto_goes_v3 finsihed at '+fin_time
 print,''
 wait,10
 END
+
+pro stitch_spectra_day, receiver, sunrise, sunset, z, x, y
+ 
+; Name: sitch_spectra_day
+;
+;   Purpose:
+;   -To stitch together all spectra in input folder and between the input times given. 
+;
+; Input parameters:
+;   -receiver (string): The receiver for which .fts files are to be searched
+;   -sunrise (string): The start time of the stitch. Format: YYYYMMDD_HHMMSS
+;   -sunset (string): The end time of the stitch. Format: YYYYMMDD_HHMMSS
+;
+; Keywords:
+;   -None
+;
+; Outputs:
+;   -z (float array): The dynamic spectra between desired times
+;   -x (float array): The time array of desired times
+;   -y (float_array): The frequency array of stitched spectra
+;
+;   Calling sequence example:
+;   -stitch_spectra_day,'01','20110101_081000','20110101_191000',z,x,y
+;
+;   Last modified:
+;   -10-Nov-2011 (E.Carley) Just a clean up....
+;   -08-Jan-2013 (E.Carley) v3 implemented Change to realtime fts folder into which live data is written. Need change in
+;                           findfile argument to take into account ALL receiver .fts are in the one folder
+cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\';+folder
+
+
+  times = anytim(file2time(findfile('BIR*'+receiver+'.fit')),/utime)
+
+  ;sunrise must be in the format YYYYMMDD_HHMMSS
+  index_sunrise = where(times gt anytim(file2time(sunrise),/utime))
+  sunriseFilePos = index_sunrise[0]
+
+  ;sunset must be in the format YYYYMMDD_HHMMSS
+  index_sunset = where(times lt anytim(file2time(sunset),/utime))
+  sunsetFilePos = index_sunset[n_elements(index_sunset)-1]
+
+;=======Dynamic Spectra of entire day===========================
+list = findfile('BIR*'+receiver+'.fit')
+
+  radio_spectro_fits_read,list[sunriseFilePos],z,x,y ;start value for z ad x
+    ;z is a 2D data array, x is ID array time values, y is 1D array of frequency values
+    
+     backg=make_daily_background(receiver)
+     z = temporary(z) - backg
+   
+    ;for loop to create dynamic spectra of entire day
+    FOR i = sunriseFilePos+ 1, sunsetFilePos, 1 DO BEGIN 
+        filename = list[i]
+        radio_spectro_fits_read,filename,runningZ,runningX,y
+      
+        runningZ = temporary(runningZ) - backg
+        z = [z,runningZ]
+        x = [x,runningX]       
+    ENDFOR
+
+END
+
