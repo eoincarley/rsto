@@ -1,0 +1,1 @@
+copy /y "C:\logs\Suntimes.txt" "S:\" 

@@ -1,0 +1,9 @@
+cd, 'C:\MyIDLcodes'
+
+.rnew email_warning_mag.pro
+email_warning_mag
+
+exit
+
+
+

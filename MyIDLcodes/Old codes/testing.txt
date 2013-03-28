@@ -1,0 +1,9 @@
+; IDL Version 7.1, Microsoft Windows (Win32 x86 m32)
+; Journal File for Joe@ASTROPHYSICSBIR
+; Working directory: C:\Documents and Settings\Joe
+; Date: Fri Nov 18 11:06:13 2011
+ 
+;create_hourly_windows_v2 finsihed at 18-Nov-11 11:06:19
+; % OPENR: File unit is already open. Unit: 100, File: C:\MyIDLcodes\testing.txt.
+; % OPENR: File unit is already open. Unit: 100, File: C:\MyIDLcodes\testing.txt.
+;create_png_v2 finsihed at 18-Nov-11 11:06:19

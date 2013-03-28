@@ -1,0 +1,23 @@
+************************************
+RSTO System Status Report (LIVE)
+************************************
+
+WARNING: CALLISTO receiver malfunction detected at 13-Dec-12 16:10:27
+
+10-100 MHz Receiver: OFFLINE
+  -Latest file time: 13-Dec-12 15:00:00
+
+100-200 MHz Receiver: OFFLINE
+  -Latest file time: 13-Dec-12 15:00:00
+
+200-400 MHz Receiver: OFFLINE
+  -Latest file time: 13-Dec-12 15:00:00
+
+Please restart malfunctioning receiver or 
+contact system administrators: http://www.rosseobservatory.ie/contacts.php
+
+PLEASE DO NOT REPLY TO THIS EMAIL ADDRESS
+
+Message time: 13-Dec-12 16:10:27
+
+************************************
