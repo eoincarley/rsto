@@ -1,3 +1,5 @@
+::
+::
 :: Name: callisto_hourly_batch
 ::
 :: Author: Eoin Carley (TCD)
@@ -6,8 +8,14 @@
 ::	        and run codes in idl
 :: 
 :: Last edit: 2013-Mar-28 (Eoin Carley) -Clean up
+::
+::
 
-
+::-------------------------------------------------::
+::
+::			Run Following IDL commands			   ::
+::
+::-------------------------------------------------::
 cd, 'C:\MyIDLcodes'
 .rnew callisto_hourly_windows_v4
 callisto_hourly_windows_v4,/backg
@@ -27,12 +35,32 @@ cd, 'C:\MyIDLcodes'
 .rnew create_png_v3.pro
 create_png_v3
 
+
+:: Define some variables
 root = 'C:\Inetpub\wwwroot\data\realtime\callisto'
+set url=www.rosseobservatory.ie
+set _y_=%Date:~-4,4%  ::year
+set _m_=%Date:~-7,2%  ::month
+set _d_=%Date:~-10,2% ::day
+set _h_=%time:~0,2%	  ::hour
+set min=%time:~3,2%   ::min
+set _s_=%time:~6,2%   ::second
+
+::-------------------------------------------------::
+::
+::  Move all pngs from fts folder to pngs folder   ::
+::
+::-------------------------------------------------::
 cd, root+'\fts\'
 spawn,'move /y *.png* '+root+'\png\'
 
 
 cd, 'c:\Inetpub\wwwroot\webcam'
-$convert -gravity northeast -pointsize 16 -annotate 0 %Date:~-4,4%/%Date:~-7,2%/%Date:~-10,2%-%time:~0,2%:%time:~3,2%:%time:~6,2%-www.rosseobservatory.ie -undercolor white webcam.bmp webcam.gif
+$convert -gravity northeast -pointsize 16 -annotate 0 %_y_%/%_m_%/%_d_%-%_h_%:%min%:%_s_%-%url% -undercolor white webcam.bmp webcam.gif
 
+::-------------------------------------------------::
+::
+::						EXIT
+::
+::-------------------------------------------------::
 exit
