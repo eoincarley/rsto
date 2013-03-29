@@ -19,7 +19,7 @@ pro callisto_goes, backg=backg
 ;   Calls on:
 ;      -stitch_spectra_day
 ;      -make_daily_background   
-;      -latest_goes_v1
+;      -latest_goes
 ;       
 ;   Last Modified:
 ;      - 26-Aug-2011 (Eoin Carley) Modified background subtraction

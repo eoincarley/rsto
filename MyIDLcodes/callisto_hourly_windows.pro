@@ -18,7 +18,7 @@ pro callisto_hourly_windows, spectra, backg=backg
 ;           
 ;  Calls on:
 ;           -make_daily_background.pro --->calls on running_mean_background.pro
-;           -latest_goes_v1.pro         
+;           -latest_goes.pro         
 ;
 ;  Last modified:
 ;          
