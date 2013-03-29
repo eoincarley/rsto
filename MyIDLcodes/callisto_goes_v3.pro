@@ -68,7 +68,7 @@ xend = anytim( file2time(sunset), /utim)
 
 ;=========Plot the goes data==================
 utplot,goes[0,*],goes[1,*],thick=1,psym=3,title='1-minute GOES-15 Solar X-ray Flux',$
-xtitle='!1 Start time: '+'('+start_time+') UT',xrange=[xstart,xend],/xs,$
+xtitle='!1 Start time: '+start_time+' (UT)',xrange=[xstart,xend],/xs,$
 yrange=[1e-9,1e-3],/ylog,$
 position=[0.055,0.69,0.98,0.94],/normal,/noerase
 
@@ -105,7 +105,7 @@ loadct,5
 
   spectro_plot,bytscl(z_high,mean(z_high)-1.5*stdev(z_high),mean(z_high)+8.0*stdev(z_high)),x_high,y_high,/xs,/ys,$
   xrange=[xstart,xend],yr=[400,200],$
-  xtitle='Start Time: ('+start_time+') UT',$
+  xtitle='Start Time: '+start_time+' (UT)',$
   position=[0.055,0.06,0.98,0.33],/normal,/noerase
   z_high=[0] ;Dump the data otherwise the machine runs out of RAM!
 
@@ -132,13 +132,13 @@ loadct,5
 set_line_color
 xyouts,0.015, 0.255, 'Frequency (MHz)',/normal,orientation=90
 xyouts, 0.97, 0.56, 'Sunrise: '+anytim(file2time(sunrise),/yohkoh,/truncate), $
-/normal, alignment = 1.0, charthick=4.0, color=1
+/normal, alignment = 1.0, charthick=7.0, color=1
 xyouts, 0.97, 0.56, 'Sunrise: '+anytim(file2time(sunrise),/yohkoh,/truncate), $
 /normal, alignment = 1.0, charthick=2.0, color=0
 
 
 xyouts, 0.97, 0.54, 'Sunset: '+anytim(file2time(sunset),/yohkoh,/truncate), $
-/normal, alignment = 1.0, charthick=4.0, color=1
+/normal, alignment = 1.0, charthick=7.0, color=1
 xyouts, 0.97, 0.54, 'Sunset: '+anytim(file2time(sunset),/yohkoh,/truncate), $
 /normal, alignment = 1.0, charthick=2.0, color=0
 

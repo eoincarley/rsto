@@ -12,7 +12,7 @@ set year=%Date:~-4,4%
 set month=%Date:~-7,2%
 set day=%Date:~-10,2%
 
-cd root
+cd %root%
 mkdir %year%
 cd %year%
 

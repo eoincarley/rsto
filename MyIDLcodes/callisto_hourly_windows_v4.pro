@@ -73,7 +73,7 @@ goes = latest_goes_v2(tstart,tend)
 set_line_color
 utplot, goes[0,*], goes[1,*], xr=[xstart,xend], /xs, $
 thick=1, yrange=[1e-9,1e-3], /ylog, title='1-minute GOES-15 Solar X-ray Flux', psym=3,$
-position=[0.055,0.69,0.98,0.94],/normal,/noerase, xtitle='Start Time: '+anytim(goes[0,0],/yoh,/trun)+' (UT)'
+position=[0.055,0.69,0.98,0.94],/normal,/noerase, xtitle='Start Time: '+start_time+' (UT)'
 oplot, goes[0,*], goes[1,*], color=3, thick=2
 
 xyouts, 0.015, 0.78, 'Watts m!U-2!N', /normal, orientation=90
@@ -96,7 +96,7 @@ linestyle=[0,0], color=[3, 5], box=0,pos=[0.05,0.935], /normal
 
 loadct,5
 lower_scale = mean(data_high) - 1.5*stdev(data_high)
-upper_scale = mean(data_high) + 12.0*stdev(data_high)
+upper_scale = mean(data_high) + 14.0*stdev(data_high)
 spectro_plot,bytscl(data_high, lower_scale, upper_scale ), times_high, freq_high, /xs, /ys, $
 xrange=[xstart,xend], yr=[400,200], $
 xtitle='Start Time: '+start_time+' (UT)', $
@@ -129,7 +129,7 @@ spawn,'convert -rotate "-90" callisto_goes_hourly.ps CAL1_'+date_time+'_hourly.p
 get_utc,ut
 fin_time = anytim(ut,/yoh,/trun)
 print,''
-print,'File created: CAL1_'+date_time+'_hourly.png'
+print,'File created: CAL1_'+date_time+'_hourly.png in folder: C:\Inetpub\wwwroot\data\realtime\callisto\fts\'
 print,'create_hourly_windows_v3 finsihed at '+fin_time
 print,''
 

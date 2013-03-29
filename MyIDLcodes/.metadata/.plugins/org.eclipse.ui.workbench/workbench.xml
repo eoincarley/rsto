@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="10" version="2.0">
 <workbenchAdvisor/>
-<window height="735" maximized="true" width="1013" x="4" y="2">
+<window height="735" width="1013" x="-19" y="19">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="com.rsi.idldt.ui.views.CommandLineView"/>
 </fastViewData>
@@ -37,15 +37,15 @@
 </editorArea>
 <editor id="com.rsi.idldt.proeditor.ProEditor" name="latest_goes_v2.pro" partName="latest_goes_v2.pro" title="latest_goes_v2.pro" tooltip="C:\MyIDLcodes\latest_goes_v2.pro" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/MyIDLcodes/latest_goes_v2.pro"/>
-<editorState selectionLength="38" selectionOffset="1530"/>
+<editorState selectionLength="19" selectionOffset="957"/>
 </editor>
-<editor id="com.rsi.idldt.proeditor.ProEditor" name="callisto_hourly_windows_v4.pro" partName="callisto_hourly_windows_v4.pro" title="callisto_hourly_windows_v4.pro" tooltip="C:\MyIDLcodes\callisto_hourly_windows_v4.pro" workbook="DefaultEditorWorkbook">
+<editor focus="true" id="com.rsi.idldt.proeditor.ProEditor" name="callisto_hourly_windows_v4.pro" partName="callisto_hourly_windows_v4.pro" title="callisto_hourly_windows_v4.pro" tooltip="C:\MyIDLcodes\callisto_hourly_windows_v4.pro" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/MyIDLcodes/callisto_hourly_windows_v4.pro"/>
-<editorState selectionLength="0" selectionOffset="0"/>
+<editorState selectionLength="0" selectionOffset="5200"/>
 </editor>
-<editor activePart="true" focus="true" id="com.rsi.idldt.proeditor.ProEditor" name="callisto_goes_v3.pro" partName="callisto_goes_v3.pro" title="callisto_goes_v3.pro" tooltip="C:\MyIDLcodes\callisto_goes_v3.pro" workbook="DefaultEditorWorkbook">
+<editor id="com.rsi.idldt.proeditor.ProEditor" name="callisto_goes_v3.pro" partName="callisto_goes_v3.pro" title="callisto_goes_v3.pro" tooltip="C:\MyIDLcodes\callisto_goes_v3.pro" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/MyIDLcodes/callisto_goes_v3.pro"/>
-<editorState selectionLength="0" selectionOffset="1044"/>
+<editorState selectionLength="0" selectionOffset="0"/>
 </editor>
 </editors>
 <views>
@@ -79,7 +79,7 @@
 <view id="com.rsi.idldt.ui.views.ProfilerView" partName="Profiler"/>
 <view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints"/>
 </views>
-<perspectives activePart="com.rsi.idldt.proeditor.ProEditor" activePerspective="com.rsi.idldt.ui.IDLPerspective">
+<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="com.rsi.idldt.ui.IDLPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.debug.internal.ui.DebugPerspectiveFactory" id="org.eclipse.debug.ui.DebugPerspective" label="Debug"/>
 <alwaysOnActionSet id="com.rsi.idldt.ui.actionSets.CmdLine"/>
@@ -194,17 +194,20 @@
 <view id="org.eclipse.ui.views.TaskList"/>
 <view id="org.eclipse.debug.ui.VariableView"/>
 <view id="com.rsi.idldt.ui.views.CommandLineView"/>
+<view id="org.eclipse.debug.ui.DebugView"/>
 <fastViewBars/>
 <viewLayoutRec id="com.rsi.idldt.ui.views.CommandLineView" showTitle="true" standalone="true"/>
 <layout>
 <mainWindow>
 <info folder="true" part="left">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
+<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 <info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="756" ratioRight="252" relationship="2" relative="left">
@@ -235,7 +238,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@f1cdfb" ratio="0.882662" ratioLeft="504" ratioRight="67" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@f1cdfb" ratio="0.6900175" ratioLeft="394" ratioRight="177" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
@@ -403,6 +406,11 @@
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/latest_goes_v2.pro"/>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/callisto_hourly_windows_v4.pro"/>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/callisto_goes_v3.pro"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/callisto_hourly_windows_v4.pro"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/callisto_goes_v3.pro"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/latest_goes_v2.pro"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/callisto_hourly_windows_v4.pro"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/callisto_goes_v3.pro"/>
 </editors>
 <item historyLabel="callisto_hourly_windows_v4.pro" index="0">
 <position/>
@@ -475,7 +483,25 @@
 <item historyLabel="callisto_hourly_windows_v4.pro" index="7">
 <position info="not_deleted" x="6826" y="0"/>
 </item>
-<item active="true" historyLabel="callisto_goes_v3.pro" index="8">
+<item historyLabel="callisto_goes_v3.pro" index="8">
+<position/>
+</item>
+<item historyLabel="callisto_hourly_windows_v4.pro" index="9">
+<position info="not_deleted" x="6826" y="0"/>
+</item>
+<item historyLabel="callisto_goes_v3.pro" index="10">
+<position/>
+</item>
+<item historyLabel="latest_goes_v2.pro" index="11">
+<position info="not_deleted" x="1530" y="38"/>
+</item>
+<item historyLabel="callisto_hourly_windows_v4.pro" index="12">
+<position/>
+</item>
+<item historyLabel="callisto_goes_v3.pro" index="13">
+<position/>
+</item>
+<item active="true" historyLabel="callisto_hourly_windows_v4.pro" index="12">
 <position/>
 </item>
 </navigationHistory>
