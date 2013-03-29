@@ -1,4 +1,4 @@
-pro system_status_check_v1,receiver,today
+pro system_status_check, receiver, today
 ;
 ;
 ; Name: system_status_check
@@ -21,7 +21,9 @@ pro system_status_check_v1,receiver,today
 ;   - 10-Nov-2011 (E.Carley) Just a clean up....
 ;   - 08-Jan-2013 (E.Carley) v1 implemented. Change to realtime fts folder into which live data is written. Need change in
 ;                            findfile argument to take into account ALL receiver .fts are in the one folder
-
+;	- 29-Mar-2013 (E.Carley) - Set up version control system for all IDL scripts. all 'v1' 'v2'
+;							   suffixes have been removed from codes
+;
 
 cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\'
 
@@ -65,7 +67,7 @@ ENDELSE
 END
 
 
-pro system_status_v1
+pro system_status
 ;
 ;
 ; Name: system_status
@@ -86,6 +88,9 @@ pro system_status_v1
 ;   Last modified:
 ;   - 10-Nov-2011 (E.Carley) Just a clean up....
 ;   - 08-Jan-2013 (E.Carley) v1 implemented. See comment on date above
+;	- 29-Mar-2013 (E.Carley) - Set up version control system for all IDL scripts. all 'v1' 'v2'
+;							   suffixes have been removed from codes
+;
 ;
 get_utc,today
 today = time2file(today,/date)

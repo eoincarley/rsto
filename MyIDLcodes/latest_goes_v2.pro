@@ -1,5 +1,5 @@
 ;
-; Name: latest_goes_v2
+; Name: latest_goes
 ; 
 ; Purpose: 
 ;   -Retrieve the GOES light curve between the two input times. Lightcurves are from the NOAA
@@ -21,10 +21,13 @@
 ;   
 ;   Last modified:
 ;   - 16-Nov-2011 (E.Carley) Added all_day keyword
-; - 28-Mar-2013 (E. carley) Cleaned up time formatting and added readcol
+;   - 28-Mar-2013 (E. carley) Cleaned up time formatting and added readcol
+;	- 29-Mar-2013 (E.Carley) - Set up version control system for all IDL scripts. all 'v1' 'v2'
+;							   suffixes have been removed from codes
 ;
 ;
-function latest_goes_v2, tstart, tend, ALL_DAY=ALL_DAY
+;
+function latest_goes, tstart, tend, ALL_DAY=ALL_DAY
 
 ;-------- Define URL and path of the NOAA GOES text file ----------
 url = 'http://www.swpc.noaa.gov'

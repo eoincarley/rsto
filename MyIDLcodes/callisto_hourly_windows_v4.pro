@@ -1,7 +1,7 @@
-pro callisto_hourly_windows_v4, spectra, backg=backg
+pro callisto_hourly_windows, spectra, backg=backg
 
 
-;  Name: callisto_hourly_windows_v4
+;  Name: callisto_hourly_windows
 ;
 ;  Purpose: This is a routine that finds the latest dynamic spectra and plots the past hour's worth.
 ;            A png is then created for online display
@@ -28,6 +28,9 @@ pro callisto_hourly_windows_v4, spectra, backg=backg
 ;           - 23-May-2011 (E.Carley)
 ;           - 08-Jan-2013 (E.Carley) - v3 written. Change to directory into which realtime data is dumped -> Change directory
 ;                                      in which this code searches for realtime data to plot
+;			- 29-Mar-2013 (E.Carley) - Set up version control system for all IDL scripts. all 'v1' 'v2'
+;									   suffixes have been removed from codes
+;
 ;
 ; Call above function to get high, mid and low spectra
 
@@ -68,7 +71,7 @@ loadct,39
 
 ;--------------- Plot GOES lightcurve and dynamic spectra ----------------------- 
 
-goes = latest_goes_v2(tstart,tend)
+goes = latest_goes(tstart,tend)
 
 set_line_color
 utplot, goes[0,*], goes[1,*], xr=[xstart,xend], /xs, $

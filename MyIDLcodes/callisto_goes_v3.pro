@@ -1,6 +1,6 @@
-pro callisto_goes_v3, backg=backg
+pro callisto_goes, backg=backg
 
-;   Name: callisto_goes_v2
+;   Name: callisto_goes
 ;
 ;   Purpose:
 ;   -This procedure reads in Joe's sunrise and sunset times, stitches current days spectra 
@@ -26,7 +26,9 @@ pro callisto_goes_v3, backg=backg
 ;      - 16-Nov-2011 (Eoin Carley) Now set to call latest_goes_v1 (Used to be latest_goes_allday)
 ;      - 08-Jan-2013 (E.Carley) Change to realtime fts folder into which live data is written. Need change in
 ;                               findfile argument to take into account ALL receiver .fts are in the one folder
-
+;	   - 29-Mar-2013 (E.Carley) - Set up version control system for all IDL scripts. all 'v1' 'v2'
+;								  suffixes have been removed from codes
+;
 ;=========Get today's date in correct format========
 get_utc,ut
 today = time2file(ut,/date)
@@ -47,7 +49,7 @@ spawn,'del '+today+'_Gp_xr_1m.txt'
 
 ;===========Get the GOES data============
 
-goes = latest_goes_v2(sunrise,sunset,/all_day)
+goes = latest_goes(sunrise,sunset,/all_day)
 
 ;=====Define plotting parameters=======
 cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\'
@@ -155,6 +157,7 @@ spawn,'convert -rotate "-90" callisto_goes_all_day.ps callisto_goes'+today+'.png
 get_utc,ut
 fin_time = anytim(ut,/yoh,/trun)
 print,''
+print,'File written: callisto_goes'+today+'.png'
 print,'callisto_goes_v3 finsihed at '+fin_time
 print,''
 wait,10
