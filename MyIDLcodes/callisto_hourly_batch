@@ -17,23 +17,23 @@
 ::
 ::-------------------------------------------------::
 cd, 'C:\MyIDLcodes'
-.rnew callisto_hourly_windows_v4
-callisto_hourly_windows_v4,/backg
+.rnew callisto_hourly_windows
+callisto_hourly_windows,/backg
 
 
 cd, 'C:\MyIDLcodes'
-.rnew system_status_v1
-system_status_v1
+.rnew system_status
+system_status
 
 
 cd, 'C:\MyIDLcodes'
-.rnew callisto_goes_v3
-callisto_goes_v3
+.rnew callisto_goes
+callisto_goes
 
 
 cd, 'C:\MyIDLcodes'
-.rnew create_png_v3.pro
-create_png_v3
+.rnew create_png
+create_png
 
 
 :: Define some variables
