@@ -29,13 +29,13 @@ pro callisto_goes, backg=backg
 ;	   - 29-Mar-2013 (E.Carley) - Set up version control system for all IDL scripts. all 'v1' 'v2'
 ;								  suffixes have been removed from codes
 ;
-;=========Get today's date in correct format========
+;----------- Get today's date in correct format ----------
 get_utc,ut
 today = time2file(ut,/date)
 todayhms = time2file(ut,/sec)
 spawn,'del '+today+'_Gp_xr_1m.txt'
 
-;=======Get solar ephemeris from suntimes.txt (ouput from Joe's program)=======
+;----------- Get solar ephemeris from suntimes.txt (ouput from Joe's program) -----------
   cd,'c:\logs'
   openr,100,'suntimes.txt'
   suntimes = strarr(3)
@@ -49,7 +49,7 @@ spawn,'del '+today+'_Gp_xr_1m.txt'
 
 ;===========Get the GOES data============
 
-goes = latest_goes(sunrise,sunset,/all_day)
+goes = latest_goes(sunrise, sunset, /all_day)
 
 ;=====Define plotting parameters=======
 cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\'
@@ -57,17 +57,13 @@ set_plot,'ps'
 device,filename = 'callisto_goes_all_day.ps',/color,/inches,/landscape,/encapsulate,$
 yoffset=12,ysize=10,xsize=12  
 
-loadct,39
-!p.color=0
-!p.background=255
-!p.charsize=1.2
 
 start_time = anytim(file2time(sunrise),/yohkoh,/truncate) ;string for plotting
 xstart = anytim( file2time(sunrise), /utim)
 xend = anytim( file2time(sunset), /utim)
 
 
-
+set_line_color
 ;=========Plot the goes data==================
 utplot,goes[0,*],goes[1,*],thick=1,psym=3,title='1-minute GOES-15 Solar X-ray Flux',$
 xtitle='!1 Start time: '+start_time+' (UT)',xrange=[xstart,xend],/xs,$
@@ -75,7 +71,7 @@ yrange=[1e-9,1e-3],/ylog,$
 position=[0.055,0.69,0.98,0.94],/normal,/noerase
 
 xyouts,0.015, 0.78, 'Watts m!U-2!N',/normal,orientation=90
-oplot,goes[0,*],goes[1,*],color=240,thick=2 ;for some reason utplot won't color the line
+oplot,goes[0,*],goes[1,*],color=3,thick=2 ;for some reason utplot won't color the line
 
 axis,yaxis=1,ytickname=[' ','A','B','C','M','X',' ']
 axis,yaxis=0,yrange=[1e-9,1e-3]
@@ -85,11 +81,11 @@ plots,goes[0,*],1e-7
 plots,goes[0,*],1e-6
 plots,goes[0,*],1e-5
 plots,goes[0,*],1e-4
-oplot,goes[0,*],goes[1,*],color=230,thick=1.5
-oplot,goes[0,*],goes[2,*],color=80,thick=1.5
+oplot,goes[0,*],goes[1,*],color=3,thick=1.5
+oplot,goes[0,*],goes[2,*],color=5,thick=1.5
 
 legend, ['GOES15 0.1-0.8nm','GOES15 0.05-0.4nm'],$
-linestyle=[0,0], color=[220,80], box=0,pos=[0.05,0.935],/normal
+linestyle=[0,0], color=[3,5], box=0,pos=[0.05,0.935],/normal
 
 ;============End of goes plot============
 
@@ -133,15 +129,15 @@ loadct,5
 
 set_line_color
 xyouts,0.015, 0.255, 'Frequency (MHz)',/normal,orientation=90
-xyouts, 0.97, 0.56, 'Sunrise: '+anytim(file2time(sunrise),/yohkoh,/truncate), $
-/normal, alignment = 1.0, charthick=7.0, color=1
-xyouts, 0.97, 0.56, 'Sunrise: '+anytim(file2time(sunrise),/yohkoh,/truncate), $
-/normal, alignment = 1.0, charthick=2.0, color=0
-
-
-xyouts, 0.97, 0.54, 'Sunset: '+anytim(file2time(sunset),/yohkoh,/truncate), $
+xyouts, 0.97, 0.15, 'Sunrise: '+anytim(file2time(sunrise),/yohkoh,/truncate), $
 /normal, alignment = 1.0, charthick=7.0, color=1, charsize=1.5
-xyouts, 0.97, 0.54, 'Sunset: '+anytim(file2time(sunset),/yohkoh,/truncate), $
+xyouts, 0.97, 0.15, 'Sunrise: '+anytim(file2time(sunrise),/yohkoh,/truncate), $
+/normal, alignment = 1.0, charthick=2.0, color=0, charsize=1.5
+
+
+xyouts, 0.97, 0.1, 'Sunset: '+anytim(file2time(sunset),/yohkoh,/truncate), $
+/normal, alignment = 1.0, charthick=7.0, color=1, charsize=1.5
+xyouts, 0.97, 0.1, 'Sunset: '+anytim(file2time(sunset),/yohkoh,/truncate), $
 /normal, alignment = 1.0, charthick=2.0, color=0, charsize=1.5
 
 device,/close
