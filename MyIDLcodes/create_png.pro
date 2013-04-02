@@ -1,8 +1,8 @@
-pro create_png_v3
+pro create_png
 
 ;
 ;
-; Name: create_png_v2.pro
+; Name: create_png.pro
 ; 
 ; Purpose: 
 ;   -Make PNGs from latest fits folders in the archive (version 2)
@@ -59,13 +59,11 @@ FOR q=0,2 DO BEGIN
       starting_point = -1.0
   ENDELSE    
 
-    cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\'
-    set_plot,'ps'
-    ;device,filename = 'single_png.ps',/color,/inches,/landscape,/encapsulate,$
-    ;yoffset=8,ysize=6,xsize=8
+  cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\'
+  set_plot,'ps'
     
     
-  If starting_point[0] ne -1 THEN BEGIN
+  IF starting_point[0] ne -1 THEN BEGIN
      starting_point = starting_point[0]
      list = list_fits
      backg = make_daily_background(receiver)
@@ -117,7 +115,7 @@ set_plot,'win'
 get_utc,ut
 fin_time = anytim(ut,/yoh,/trun)
 print,''
-print,'create_png_v3 finsihed at '+fin_time
+print,'create_png finsihed at '+fin_time
 print,''
 
 END
