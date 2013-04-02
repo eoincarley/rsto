@@ -140,9 +140,9 @@ xyouts, 0.97, 0.56, 'Sunrise: '+anytim(file2time(sunrise),/yohkoh,/truncate), $
 
 
 xyouts, 0.97, 0.54, 'Sunset: '+anytim(file2time(sunset),/yohkoh,/truncate), $
-/normal, alignment = 1.0, charthick=7.0, color=1
+/normal, alignment = 1.0, charthick=7.0, color=1, charsize=1.5
 xyouts, 0.97, 0.54, 'Sunset: '+anytim(file2time(sunset),/yohkoh,/truncate), $
-/normal, alignment = 1.0, charthick=2.0, color=0
+/normal, alignment = 1.0, charthick=2.0, color=0, charsize=1.5
 
 device,/close
 set_plot,'win'

@@ -90,8 +90,8 @@ plots, goes[0,*], 1e-7, color=0
 plots, goes[0,*], 1e-6, color=0
 plots, goes[0,*], 1e-5, color=0
 plots, goes[0,*], 1e-4, color=0
-oplot, goes[0,*], goes[0,*], color=3, thick=1.7
-oplot, goes[0,*], goes[0,*], color=5, thick=1.7 
+oplot, goes[0,*], goes[1,*], color=3, thick=1.7
+oplot, goes[0,*], goes[2,*], color=5, thick=1.7 
 
 legend, ['GOES15 0.1-0.8nm','GOES15 0.05-0.4nm'],$
 linestyle=[0,0], color=[3, 5], box=0,pos=[0.05,0.935], /normal

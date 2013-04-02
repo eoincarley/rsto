@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="10" version="2.0">
 <workbenchAdvisor/>
-<window height="735" width="1013" x="-19" y="19">
+<window height="735" width="1013" x="-3" y="-2">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="com.rsi.idldt.ui.views.CommandLineView"/>
 </fastViewData>
@@ -35,17 +35,17 @@
 </folder>
 </info>
 </editorArea>
-<editor id="com.rsi.idldt.proeditor.ProEditor" name="latest_goes_v2.pro" partName="latest_goes_v2.pro" title="latest_goes_v2.pro" tooltip="C:\MyIDLcodes\latest_goes_v2.pro" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/MyIDLcodes/latest_goes_v2.pro"/>
-<editorState selectionLength="19" selectionOffset="957"/>
-</editor>
-<editor focus="true" id="com.rsi.idldt.proeditor.ProEditor" name="callisto_hourly_windows_v4.pro" partName="callisto_hourly_windows_v4.pro" title="callisto_hourly_windows_v4.pro" tooltip="C:\MyIDLcodes\callisto_hourly_windows_v4.pro" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/MyIDLcodes/callisto_hourly_windows_v4.pro"/>
-<editorState selectionLength="0" selectionOffset="5200"/>
-</editor>
-<editor id="com.rsi.idldt.proeditor.ProEditor" name="callisto_goes_v3.pro" partName="callisto_goes_v3.pro" title="callisto_goes_v3.pro" tooltip="C:\MyIDLcodes\callisto_goes_v3.pro" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/MyIDLcodes/callisto_goes_v3.pro"/>
+<editor id="com.rsi.idldt.proeditor.ProEditor" name="callisto_goes.pro" partName="callisto_goes.pro" title="callisto_goes.pro" tooltip="C:\MyIDLcodes\callisto_goes.pro" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/MyIDLcodes/callisto_goes.pro"/>
 <editorState selectionLength="0" selectionOffset="0"/>
+</editor>
+<editor id="com.rsi.idldt.proeditor.ProEditor" name="latest_goes.pro" partName="latest_goes.pro" title="latest_goes.pro" tooltip="C:\MyIDLcodes\latest_goes.pro" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/MyIDLcodes/latest_goes.pro"/>
+<editorState selectionLength="0" selectionOffset="0"/>
+</editor>
+<editor activePart="true" focus="true" id="com.rsi.idldt.proeditor.ProEditor" name="callisto_hourly_windows.pro" partName="callisto_hourly_windows.pro" title="callisto_hourly_windows.pro" tooltip="C:\MyIDLcodes\callisto_hourly_windows.pro" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/MyIDLcodes/callisto_hourly_windows.pro"/>
+<editorState selectionLength="0" selectionOffset="3483"/>
 </editor>
 </editors>
 <views>
@@ -79,7 +79,7 @@
 <view id="com.rsi.idldt.ui.views.ProfilerView" partName="Profiler"/>
 <view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints"/>
 </views>
-<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="com.rsi.idldt.ui.IDLPerspective">
+<perspectives activePart="com.rsi.idldt.proeditor.ProEditor" activePerspective="com.rsi.idldt.ui.IDLPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.debug.internal.ui.DebugPerspectiveFactory" id="org.eclipse.debug.ui.DebugPerspective" label="Debug"/>
 <alwaysOnActionSet id="com.rsi.idldt.ui.actionSets.CmdLine"/>
@@ -411,6 +411,11 @@
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/latest_goes_v2.pro"/>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/callisto_hourly_windows_v4.pro"/>
 <editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/callisto_goes_v3.pro"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/latest_goes_v2.pro"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/callisto_goes_v3.pro"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/callisto_goes.pro"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/latest_goes.pro"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" uri="file:/C:/MyIDLcodes/callisto_hourly_windows.pro"/>
 </editors>
 <item historyLabel="callisto_hourly_windows_v4.pro" index="0">
 <position/>
@@ -501,7 +506,19 @@
 <item historyLabel="callisto_goes_v3.pro" index="13">
 <position/>
 </item>
-<item active="true" historyLabel="callisto_hourly_windows_v4.pro" index="12">
+<item historyLabel="callisto_hourly_windows_v4.pro" index="12">
+<position/>
+</item>
+<item historyLabel="latest_goes_v2.pro" index="14"/>
+<item historyLabel="callisto_hourly_windows_v4.pro" index="12"/>
+<item historyLabel="callisto_goes_v3.pro" index="15"/>
+<item historyLabel="callisto_goes.pro" index="16">
+<position/>
+</item>
+<item historyLabel="latest_goes.pro" index="17">
+<position/>
+</item>
+<item active="true" historyLabel="callisto_hourly_windows.pro" index="18">
 <position/>
 </item>
 </navigationHistory>
@@ -521,6 +538,15 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" name="callisto_hourly_windows.pro" tooltip="C:\MyIDLcodes\callisto_hourly_windows.pro">
+<persistable uri="file:/C:/MyIDLcodes/callisto_hourly_windows.pro"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" name="latest_goes.pro" tooltip="C:\MyIDLcodes\latest_goes.pro">
+<persistable uri="file:/C:/MyIDLcodes/latest_goes.pro"/>
+</file>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" name="callisto_goes.pro" tooltip="C:\MyIDLcodes\callisto_goes.pro">
+<persistable uri="file:/C:/MyIDLcodes/callisto_goes.pro"/>
+</file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" name="callisto_goes_v3.pro" tooltip="C:\MyIDLcodes\callisto_goes_v3.pro">
 <persistable uri="file:/C:/MyIDLcodes/callisto_goes_v3.pro"/>
 </file>
@@ -548,9 +574,6 @@
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" name="email_warning.pro" tooltip="C:\MyIDLcodes\email_warning.pro">
 <persistable uri="file:/C:/MyIDLcodes/email_warning.pro"/>
 </file>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" name="latest_goes.pro" tooltip="C:\MyIDLcodes\latest_goes.pro">
-<persistable uri="file:/C:/MyIDLcodes/latest_goes.pro"/>
-</file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" name="idl_startup.pro" tooltip="C:\MyIDLcodes\idl_startup.pro">
 <persistable uri="file:/C:/MyIDLcodes/idl_startup.pro"/>
 </file>
@@ -559,9 +582,6 @@
 </file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" name="callisto_goes_v1.pro" tooltip="C:\MyIDLcodes\callisto_goes_v1.pro">
 <persistable uri="file:/C:/MyIDLcodes/callisto_goes_v1.pro"/>
-</file>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.rsi.idldt.proeditor.ProEditor" name="latest_goes_allday.pro" tooltip="C:\MyIDLcodes\latest_goes_allday.pro">
-<persistable uri="file:/C:/MyIDLcodes/latest_goes_allday.pro"/>
 </file>
 </mruList>
 </workbench>
