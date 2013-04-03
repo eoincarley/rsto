@@ -53,14 +53,16 @@ ENDELSE
 
 ;--------- Copy data from url -----------
 
-  data = sock_find(url, file, path=root)
-IF n_elements(data) gt 1 THEN BEGIN
-  sock_copy, data[n_elements(data)-1]
-  readcol,'GP_xr_1m.txt', y, m, d, hhmm, mjd, sod, short_channel, long_channel
+  ;data = sock_find(url, file, path=root)
+  ;IF n_elements(data) gt 1 THEN BEGIN
+  ;sock_copy, data[n_elements(data)-1]
+
+  readcol, file, y, m, d, hhmm, mjd, sod, short_channel, long_channel
 
   ;-------- Time in correct format --------
   time  = strarr(n_elements(y))
-  time[*] = string(y[*], format='(I04)') + string(m[*], format='(I02)') + string(d[*], format='(I02)') + '_' + string(hhmm[*], format='(I04)')
+  time[*] = string(y[*], format='(I04)') + string(m[*], format='(I02)') $
+  		  + string(d[*], format='(I02)') + '_' + string(hhmm[*], format='(I04)')
 
 
   ;-------- Get start and stop indices -----
@@ -78,12 +80,12 @@ IF n_elements(data) gt 1 THEN BEGIN
   goes_array[1,*] = long_channel[index_start:index_stop]
   goes_array[2,*] = short_channel[index_start:index_stop]
   return,goes_array
-ENDIF ELSE BEGIN
-  print,' '
-  print, 'Copy of '+file+' from : '+url+root+' unsuccessful' 
-  print,' '
-  goes_array = [0,0,0] ;dummy goes array
+ ;ENDIF ELSE BEGIN
+ ; print,' '
+ ; print, 'Copy of '+file+' from : '+url+root+' unsuccessful' 
+ ; print,' '
+ ; goes_array = [0,0,0] ;dummy goes array
   return, goes_array
-ENDELSE
+;ENDELSE
 
 END
