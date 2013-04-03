@@ -33,7 +33,7 @@ pro callisto_goes, backg=backg
 get_utc,ut
 today = time2file(ut,/date)
 todayhms = time2file(ut,/sec)
-spawn,'del '+today+'_Gp_xr_1m.txt'
+;spawn,'del '+today+'_Gp_xr_1m.txt'
 
 ;----------- Get solar ephemeris from suntimes.txt (ouput from Joe's program) -----------
   cd,'c:\logs'
@@ -48,11 +48,11 @@ spawn,'del '+today+'_Gp_xr_1m.txt'
   sunset = suntimes[1]
 
 ;===========Get the GOES data============
-
+cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\'
 goes = latest_goes(sunrise, sunset, /all_day)
 
 ;=====Define plotting parameters=======
-cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\'
+
 set_plot,'ps'
 device,filename = 'callisto_goes_all_day.ps',/color,/inches,/landscape,/encapsulate,$
 yoffset=12,ysize=10,xsize=12  
@@ -101,7 +101,7 @@ loadct,5
 ;=======The 200-400 MHz data=========
   stitch_spectra_day,'03',sunrise,sunset,z_high,x_high,y_high
 
-  spectro_plot,bytscl(z_high,mean(z_high)-1.5*stdev(z_high),mean(z_high)+8.0*stdev(z_high)),x_high,y_high,/xs,/ys,$
+  spectro_plot,bytscl(z_high,mean(z_high)-0.5*stdev(z_high),mean(z_high)+8.0*stdev(z_high)),x_high,y_high,/xs,/ys,$
   xrange=[xstart,xend],yr=[400,200],$
   xtitle='Start Time: '+start_time+' (UT)',$
   position=[0.055,0.06,0.98,0.33],/normal,/noerase
@@ -129,15 +129,15 @@ loadct,5
 
 set_line_color
 xyouts,0.015, 0.255, 'Frequency (MHz)',/normal,orientation=90
-xyouts, 0.97, 0.15, 'Sunrise: '+anytim(file2time(sunrise),/yohkoh,/truncate), $
+xyouts, 0.95, 0.1, 'Sunrise: '+anytim(file2time(sunrise),/yohkoh,/truncate), $
 /normal, alignment = 1.0, charthick=7.0, color=1, charsize=1.5
-xyouts, 0.97, 0.15, 'Sunrise: '+anytim(file2time(sunrise),/yohkoh,/truncate), $
+xyouts, 0.95, 0.1, 'Sunrise: '+anytim(file2time(sunrise),/yohkoh,/truncate), $
 /normal, alignment = 1.0, charthick=2.0, color=0, charsize=1.5
 
 
-xyouts, 0.97, 0.1, 'Sunset: '+anytim(file2time(sunset),/yohkoh,/truncate), $
+xyouts, 0.95, 0.08, 'Sunset: '+anytim(file2time(sunset),/yohkoh,/truncate), $
 /normal, alignment = 1.0, charthick=7.0, color=1, charsize=1.5
-xyouts, 0.97, 0.1, 'Sunset: '+anytim(file2time(sunset),/yohkoh,/truncate), $
+xyouts, 0.95, 0.08, 'Sunset: '+anytim(file2time(sunset),/yohkoh,/truncate), $
 /normal, alignment = 1.0, charthick=2.0, color=0, charsize=1.5
 
 device,/close
@@ -145,7 +145,7 @@ set_plot,'win'
 
 
 cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\'
-spawn,'del Gp_xr_1m.txt'
+;spawn,'del Gp_xr_1m.txt'
 spawn,'convert -rotate "-90" callisto_goes_all_day.ps callisto_goes.png'
 date_time =time2file(start_time)+'00'
 spawn,'convert -rotate "-90" callisto_goes_all_day.ps callisto_goes'+today+'.png'
@@ -217,6 +217,6 @@ list = findfile('BIR*'+receiver+'.fit')
         z = [z,runningZ]
         x = [x,runningX]       
     ENDFOR
-
+    ;z = smooth(constbacksub(z, /auto),3)
 END
 

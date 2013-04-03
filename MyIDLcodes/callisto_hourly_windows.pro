@@ -33,13 +33,6 @@ pro callisto_hourly_windows, spectra, backg=backg
 ;
 ;
 ; Call above function to get high, mid and low spectra
-
-;Stitch spectra at end of this script
-stitch_spectra, '03', data_high, times_high, freq_high 
-stitch_spectra, '02', data_mid, times_mid, freq_mid
-stitch_spectra, '01', data_low, times_low, freq_low
-    
-;--------------- Get all necessary time formats --------------
 get_utc, current_time
 time_minus = anytim(current_time,/utime) - 3600.0 
 time_minus = anytim(time_minus,/ext)
@@ -53,6 +46,12 @@ tend = time2file(tend)         ;**string
 xstart = anytim(file2time(tstart),/utime)  
 xend = anytim(file2time(tend),/utime)      
 start_time = anytim(file2time(tstart),/yohkoh,/truncate) ;only for display on x-axis
+;Stitch spectra at end of this script
+stitch_spectra, '03', data_high, times_high, freq_high, xstart
+stitch_spectra, '02', data_mid, times_mid, freq_mid, xstart
+stitch_spectra, '01', data_low, times_low, freq_low, xstart
+    
+
 
 ;---------------- Set window size, colour and plot format ---------------------
 
@@ -71,7 +70,7 @@ loadct,39
 
 ;--------------- Plot GOES lightcurve and dynamic spectra ----------------------- 
 
-goes = latest_goes(tstart,tend)
+goes = latest_goes(tstart,tend, /all_day)
 
 set_line_color
 utplot, goes[0,*], goes[1,*], xr=[xstart,xend], /xs, $
@@ -98,8 +97,8 @@ linestyle=[0,0], color=[3, 5], box=0,pos=[0.05,0.935], /normal
 
 
 loadct,5
-lower_scale = mean(data_high) - 1.5*stdev(data_high)
-upper_scale = mean(data_high) + 14.0*stdev(data_high)
+lower_scale = mean(data_high) - 1.0*stdev(data_high)
+upper_scale = mean(data_high) + 6.0*stdev(data_high)
 spectro_plot,bytscl(data_high, lower_scale, upper_scale ), times_high, freq_high, /xs, /ys, $
 xrange=[xstart,xend], yr=[400,200], $
 xtitle='Start Time: '+start_time+' (UT)', $
@@ -124,7 +123,7 @@ xyouts, 0.015, 0.255, 'Frequency (MHz)', /normal, orientation=90
 device,/close
 set_plot,'win'
 cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\'
-spawn,'del Gp_xr_1m.txt'
+;spawn,'del Gp_xr_1m.txt'
 spawn,'convert -rotate "-90" callisto_goes_hourly.ps callisto_hourly1.png'
 date_time =time2file(start_time)+'00'
 spawn,'convert -rotate "-90" callisto_goes_hourly.ps CAL1_'+date_time+'_hourly.png'
@@ -169,7 +168,7 @@ END
 ;   -08-Jan-2013 (E.Carley) See comment on same date below.
 ;                           New directory structure puts ALL fits in same fts folder -> Need an extra criterion
 ;                           in findfile argument.
-pro stitch_spectra, receiver, z, x, y
+pro stitch_spectra, receiver, z, x, y, start_time
 cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\'
 
 get_utc,ut
@@ -181,25 +180,26 @@ IF n_elements(list) gt 0 THEN BEGIN
 
   index_stop = n_elements(list)-1
   latest_time = file_times[n_elements(file_times)-1] + 900.0
-  start_spectra_time = latest_time - 4500.0
+  start_spectra_time = start_time;latest_time - 4500.0
   
   index_start = closest(file_times, start_spectra_time)
  
   radio_spectro_fits_read, list[index_start], z, x, y
   ;z is a 2D data array, x is 1D array of time values, y is 1D array of frequency values
 
-  backg = make_daily_background(receiver)
-  z = temporary(z) - backg 
+  ;backg = make_daily_background(receiver)
+  ;z = temporary(z) - backg 
   ;----------- Loop to 'stitch together' all spectra from last hour -----------
     FOR i = index_start+1, index_stop, 1 DO BEGIN
 
         filename = list[i]
         radio_spectro_fits_read, filename, runningZ, runningX, runningy
        
-        runningZ = temporary(runningZ) - backg      
+        ;runningZ = temporary(runningZ) - backg      
         z = [z,runningZ]
         x = [x,runningX]
      ENDFOR
+     z = smooth(constbacksub(z, /auto),3)
 ENDIF ELSE BEGIN
 print,' Did not detect any fits files for today'
 ENDELSE
