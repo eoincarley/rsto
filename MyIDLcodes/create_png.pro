@@ -66,33 +66,33 @@ FOR q=0,2 DO BEGIN
   IF starting_point[0] ne -1 THEN BEGIN
      starting_point = starting_point[0]
      list = list_fits
-     backg = make_daily_background(receiver)
+     ;backg = make_daily_background(receiver)
      
     
       FOR j=starting_point ,n_elements(list)-1 DO BEGIN
        
-        device,filename = 'single_png.ps',/color,/inches,/landscape,/encapsulate,$
-        yoffset=8,ysize=6,xsize=8
-        radio_spectro_fits_read,list[j],z,x,y
-        z = z - backg
+        device,filename = 'single_png.ps', /color, /inches, /landscape, /encapsulate, $
+        yoffset=8, ysize=6, xsize=8
+        radio_spectro_fits_read, list[j], data, time, freq
+        data = constbacksub(data, /auto);z - backg
         
         newName = strjoin( strsplit(list[j],'fit', /regex,/extract,/preserve_null),'png')
-        start_time = anytim(x[0],/yoh,/trun)
+        start_time = anytim(time[0],/yoh,/trun)
         loadct,5
         IF q eq 2 THEN BEGIN
-          spectro_plot,bytscl(z,mean(z)-1.5*stdev(z),mean(z)+6.0*stdev(z)),x,y,$
+          spectro_plot, data > (-10), time, freq, $
           /xs,/ys,ytitle='Frequency (MHz)',yr=[200,100],$
           title='eCallisto (Birr Castle, Ireland)',xtitle='Start Time ('+$
           start_time+' UT)', position=[0.1,0.11,0.9,0.9],/normal
         ENDIF
         IF q eq 1 THEN BEGIN
-          spectro_plot,bytscl(z,mean(z)-1.5*stdev(z),mean(z)+6.0*stdev(z)),x,y,$
-          /xs,/ys,ytitle='Frequency (MHz)',yr=[100,10],ytickv=[100,80,60,40,20,10],yticks=5,yminor=4,$
+          spectro_plot, data > (-10), time, freq, $
+          /xs, /ys, ytitle='Frequency (MHz)', yr=[100,10], ytickv=[100,80,60,40,20,10], yticks=5, yminor=4, $
           title='eCallisto (Birr Castle, Ireland)',xtitle='Start Time ('+$
           start_time+' UT)', position=[0.1,0.11,0.9,0.9],/normal
         ENDIF 
         IF q eq 0 THEN BEGIN
-          spectro_plot,bytscl(z,mean(z)-1.5*stdev(z),mean(z)+6.0*stdev(z)),x,y,$
+          spectro_plot, data > (-10), time, freq, $
           /xs,/ys,ytitle='Frequency (MHz)',$
           title='eCallisto (Birr Castle, Ireland)',xtitle='Start Time ('+$
           start_time+' UT)', position=[0.1,0.11,0.9,0.9],/normal
