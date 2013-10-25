@@ -8,9 +8,10 @@
  
 
 :: 		Copy the GOES text sheet from the S:\\ folder
-
+:: %_y_%%_m_%%_d_%_Gp_xr_1m.txtÂ
 S:
-copy /y 20130403_Gp_xr_1m.txt C:\Inetpub\wwwroot\data\realtime\callisto\fts
+copy /y Gp_xr_1m.txt C:\Inetpub\wwwroot\data\realtime\callisto\fts
+copy /y %_y_%%_m_%%_d_%_Gp_xr_1m.txt C:\Inetpub\wwwroot\data\realtime\callisto\fts
 C:
 
 echo SolarSoft setup/startup file Revision 1.0
