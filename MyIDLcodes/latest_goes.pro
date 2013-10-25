@@ -27,7 +27,7 @@
 ;
 ;
 ;
-function latest_goes, tstart, tend, ALL_DAY=ALL_DAY
+function latest_goes, tstart, tend, ALL_DAY=ALL_DAY, REMOTE = REMOTE
 
 ;-------- Define URL and path of the NOAA GOES text file ----------
 url = 'http://www.swpc.noaa.gov'
@@ -52,10 +52,12 @@ ENDIF ELSE BEGIN
 ENDELSE 
 
 ;--------- Copy data from url -----------
-
-  ;data = sock_find(url, file, path=root)
-  ;IF n_elements(data) gt 1 THEN BEGIN
-  ;sock_copy, data[n_elements(data)-1]
+IF keyword_set(remote) THEN BEGIN
+  data = sock_find(url, file, path=root)
+  IF n_elements(data) gt 1 THEN BEGIN
+  sock_copy, data[n_elements(data)-1]
+  ENDIF
+ENDIF
 
   readcol, file, y, m, d, hhmm, mjd, sod, short_channel, long_channel
 
@@ -85,7 +87,6 @@ ENDELSE
  ; print, 'Copy of '+file+' from : '+url+root+' unsuccessful' 
  ; print,' '
  ; goes_array = [0,0,0] ;dummy goes array
-  return, goes_array
 ;ENDELSE
 
 END

@@ -193,7 +193,7 @@ cd,'C:\Inetpub\wwwroot\data\realtime\callisto\fts\';+folder
 
   ;sunrise must be in the format YYYYMMDD_HHMMSS
   index_sunrise = where(times gt anytim(file2time(sunrise),/utime))
-  sunriseFilePos = index_sunrise[0]
+  sunriseFilePos = index_sunrise[0] - 1
 
   ;sunset must be in the format YYYYMMDD_HHMMSS
   index_sunset = where(times lt anytim(file2time(sunset),/utime))
