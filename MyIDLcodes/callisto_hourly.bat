@@ -8,7 +8,11 @@
  
 
 :: 		Copy the GOES text sheet from the S:\\ folder
-:: %_y_%%_m_%%_d_%_Gp_xr_1m.txtÂ
+:: %_y_%%_m_%%_d_%_Gp_xr_1m.txt
+set _y_=%Date:~-4,4%  ::year
+set _m_=%Date:~-7,2%  ::month
+set _d_=%Date:~-10,2% ::day
+
 S:
 copy /y Gp_xr_1m.txt C:\Inetpub\wwwroot\data\realtime\callisto\fts
 copy /y %_y_%%_m_%%_d_%_Gp_xr_1m.txt C:\Inetpub\wwwroot\data\realtime\callisto\fts
