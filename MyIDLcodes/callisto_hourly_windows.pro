@@ -70,7 +70,7 @@ loadct,39
 
 ;--------------- Plot GOES lightcurve and dynamic spectra ----------------------- 
 
-goes = latest_goes(tstart,tend, /all_day)
+goes = latest_goes(tstart,tend)
 
 set_line_color
 utplot, goes[0,*], goes[1,*], xr=[xstart,xend], /xs, $
