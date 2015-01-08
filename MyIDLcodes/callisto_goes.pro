@@ -101,7 +101,7 @@ loadct,5
 ;=======The 200-400 MHz data=========
   stitch_spectra_day,'03',sunrise,sunset,z_high,x_high,y_high
 
-  spectro_plot,bytscl(z_high,mean(z_high)-0.5*stdev(z_high),mean(z_high)+8.0*stdev(z_high)),x_high,y_high,/xs,/ys,$
+  spectro_plot,bytscl(z_high,mean(z_high)-1.5*stdev(z_high),mean(z_high)+8.0*stdev(z_high)),x_high,y_high,/xs,/ys,$
   xrange=[xstart,xend],yr=[400,200],$
   xtitle='Start Time: '+start_time+' (UT)',$
   position=[0.055,0.06,0.98,0.33],/normal,/noerase
@@ -111,7 +111,7 @@ loadct,5
 ;=======The 100-200 MHz data=========
   stitch_spectra_day,'02',sunrise,sunset,z_mid,x_mid,y_mid
 
-  spectro_plot,bytscl(z_mid,mean(z_mid)-1.5*stdev(z_mid),mean(z_mid)+8.0*stdev(z_mid)),x_mid,y_mid,/xs,/ys,$
+  spectro_plot,bytscl(z_mid,mean(z_mid)-0.5*stdev(z_mid),mean(z_mid)+8.0*stdev(z_mid)),x_mid,y_mid,/xs,/ys,$
   xrange=[xstart,xend],yr=[200,100],ytickinterval=50,ytickname=[' ','150','100'],$
   xticks=2,xtickname=[' ',' ',' ',' ',' ',' ',' '],xtitle=' ',$
   position=[0.055,0.33,0.98,0.46],/normal,/noerase

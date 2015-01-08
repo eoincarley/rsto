@@ -36,3 +36,16 @@ End With
  .Send
  
 End With
+
+ Set Msg = CreateObject("CDO.Message")
+ With Msg
+ 
+ .To = "gallagpt@tcd.ie"
+ .From = "notifications@rsto.ie"
+ .Subject = "System status report"
+ .TextBody = "AWESOME PC is down..." 
+ .Configuration.Fields.Item("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "go.tcd.ie"
+ .Configuration.Fields.Update
+ .Send
+ 
+End With

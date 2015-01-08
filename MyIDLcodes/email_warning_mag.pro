@@ -20,7 +20,7 @@ print, 'Flag:', flag
 IF flag eq 0 THEN BEGIN
 
   cd, 'C:\MyIDLCodes\Email_warning_mag'
-  spawn, 'email_send1.vbs'
+  ;spawn, 'email_send1.vbs'
 
 
 ENDIF ELSE BEGIN
@@ -35,7 +35,7 @@ ENDIF ELSE BEGIN
     
     cd, 'C:\MyIDLCodes\Email_warning_mag'
     print, '0'
-    spawn, 'email_send2.vbs'
+    ;spawn, 'email_send2.vbs'
 
  ENDIF
 

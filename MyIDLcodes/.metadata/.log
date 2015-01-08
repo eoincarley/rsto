@@ -3447,3 +3447,321 @@ org.eclipse.ui.PartInitException: File does not exist: 'C:\MyIDLcodes\callisto_g
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1236)
 !SUBENTRY 1 org.eclipse.ui 4 0 2013-03-29 16:44:38.607
 !MESSAGE File does not exist: 'C:\MyIDLcodes\callisto_goes_v3.pro'.
+!SESSION 2013-11-05 14:50:58.866 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.5.0_11
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_IE
+Framework arguments:  C:\MyIDLcodes\email_warning.pro
+Command-line arguments:  -os win32 -ws win32 -arch x86 C:\MyIDLcodes\email_warning.pro
+
+!ENTRY org.eclipse.jface 2 0 2013-11-05 14:51:10.835
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-11-05 14:51:10.835
+!MESSAGE A conflict occurred for CTRL+SPACE:
+Binding(CTRL+SPACE,
+	ParameterizedCommand(Command(com.rsi.idldt.ui.commands.cmdLine.ContentAssist,Command Line Content Assist,
+		Show Command Line Content Assist,
+		Category(com.rsi.idldt.ui.category.idl,IDL,IDL,true),
+		ActionDelegateHandlerProxy(null,com.rsi.idldt.actions.CommandLineKeyBindingAction:showContentAssist),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.cmdLineContext,,,system)
+Binding(CTRL+SPACE,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.contentAssist.proposals,Content Assist,
+		Content Assist,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@1f0a2a0)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.proEditorContext,,,system)
+Binding(CTRL+SPACE,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.contentAssist.proposals,Content Assist,
+		Content Assist,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@1f0a2a0)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-11-05 14:51:10.835
+!MESSAGE A conflict occurred for CTRL+U:
+Binding(CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.lowerCase,To Lower Case,
+		Changes the selection to lower case,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.CaseAction@144c5bb)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.proEditorContext,,,system)
+Binding(CTRL+U,
+	ParameterizedCommand(Command(com.rsi.idldt.ui.commands.cmdLine.EraseToStart,Command Line Erase to Start,
+		Command Line Erase to Start,
+		Category(com.rsi.idldt.ui.category.idl,IDL,IDL,true),
+		ActionDelegateHandlerProxy(null,com.rsi.idldt.actions.CommandLineKeyBindingAction:eraseToStart),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.cmdLineContext,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-11-05 14:51:10.835
+!MESSAGE A conflict occurred for CTRL+A:
+Binding(CTRL+A,
+	ParameterizedCommand(Command(com.rsi.idldt.ui.commands.cmdLine.Start,Command Line Goto Start,
+		Command Line Goto Start,
+		Category(com.rsi.idldt.ui.category.idl,IDL,IDL,true),
+		ActionDelegateHandlerProxy(null,com.rsi.idldt.actions.CommandLineKeyBindingAction:setSelectionStart),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.cmdLineContext,,,system)
+Binding(CTRL+A,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.selectAll,Select All,
+		Select all,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@11890d)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.proEditorContext,,,system)
+Binding(CTRL+A,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.selectAll,Select All,
+		Select all,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@11890d)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-11-05 14:51:10.835
+!MESSAGE A conflict occurred for CTRL+E:
+Binding(CTRL+E,
+	ParameterizedCommand(Command(org.eclipse.ui.window.openEditorDropDown,Quick Switch Editor,
+		Open the editor drop down list,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		org.eclipse.ui.internal.WorkbookEditorsHandler@13cca0e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.proEditorContext,,,system)
+Binding(CTRL+E,
+	ParameterizedCommand(Command(com.rsi.idldt.ui.commands.cmdLine.End,Command Line Goto End,
+		Command Line Goto End,
+		Category(com.rsi.idldt.ui.category.idl,IDL,IDL,true),
+		ActionDelegateHandlerProxy(null,com.rsi.idldt.actions.CommandLineKeyBindingAction:setSelectionEnd),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.cmdLineContext,,,system)
+Binding(CTRL+E,
+	ParameterizedCommand(Command(org.eclipse.ui.window.openEditorDropDown,Quick Switch Editor,
+		Open the editor drop down list,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		org.eclipse.ui.internal.WorkbookEditorsHandler@13cca0e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2014-06-06 21:47:13.677 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.5.0_11
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_IE
+Framework arguments:  C:\MyIDLcodes\email_warning.pro
+Command-line arguments:  -os win32 -ws win32 -arch x86 C:\MyIDLcodes\email_warning.pro
+
+!ENTRY org.eclipse.jface 2 0 2014-06-06 21:47:24.584
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-06-06 21:47:24.584
+!MESSAGE A conflict occurred for CTRL+SPACE:
+Binding(CTRL+SPACE,
+	ParameterizedCommand(Command(com.rsi.idldt.ui.commands.cmdLine.ContentAssist,Command Line Content Assist,
+		Show Command Line Content Assist,
+		Category(com.rsi.idldt.ui.category.idl,IDL,IDL,true),
+		ActionDelegateHandlerProxy(null,com.rsi.idldt.actions.CommandLineKeyBindingAction:showContentAssist),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.cmdLineContext,,,system)
+Binding(CTRL+SPACE,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.contentAssist.proposals,Content Assist,
+		Content Assist,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@14b84ad)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.proEditorContext,,,system)
+Binding(CTRL+SPACE,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.contentAssist.proposals,Content Assist,
+		Content Assist,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@14b84ad)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-06-06 21:47:24.584
+!MESSAGE A conflict occurred for CTRL+U:
+Binding(CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.lowerCase,To Lower Case,
+		Changes the selection to lower case,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.CaseAction@f38f09)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.proEditorContext,,,system)
+Binding(CTRL+U,
+	ParameterizedCommand(Command(com.rsi.idldt.ui.commands.cmdLine.EraseToStart,Command Line Erase to Start,
+		Command Line Erase to Start,
+		Category(com.rsi.idldt.ui.category.idl,IDL,IDL,true),
+		ActionDelegateHandlerProxy(null,com.rsi.idldt.actions.CommandLineKeyBindingAction:eraseToStart),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.cmdLineContext,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-06-06 21:47:24.584
+!MESSAGE A conflict occurred for CTRL+A:
+Binding(CTRL+A,
+	ParameterizedCommand(Command(com.rsi.idldt.ui.commands.cmdLine.Start,Command Line Goto Start,
+		Command Line Goto Start,
+		Category(com.rsi.idldt.ui.category.idl,IDL,IDL,true),
+		ActionDelegateHandlerProxy(null,com.rsi.idldt.actions.CommandLineKeyBindingAction:setSelectionStart),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.cmdLineContext,,,system)
+Binding(CTRL+A,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.selectAll,Select All,
+		Select all,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@33a6b8)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.proEditorContext,,,system)
+Binding(CTRL+A,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.selectAll,Select All,
+		Select all,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@33a6b8)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-06-06 21:47:24.584
+!MESSAGE A conflict occurred for CTRL+E:
+Binding(CTRL+E,
+	ParameterizedCommand(Command(org.eclipse.ui.window.openEditorDropDown,Quick Switch Editor,
+		Open the editor drop down list,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		org.eclipse.ui.internal.WorkbookEditorsHandler@10697e2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.proEditorContext,,,system)
+Binding(CTRL+E,
+	ParameterizedCommand(Command(com.rsi.idldt.ui.commands.cmdLine.End,Command Line Goto End,
+		Command Line Goto End,
+		Category(com.rsi.idldt.ui.category.idl,IDL,IDL,true),
+		ActionDelegateHandlerProxy(null,com.rsi.idldt.actions.CommandLineKeyBindingAction:setSelectionEnd),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.cmdLineContext,,,system)
+Binding(CTRL+E,
+	ParameterizedCommand(Command(org.eclipse.ui.window.openEditorDropDown,Quick Switch Editor,
+		Open the editor drop down list,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		org.eclipse.ui.internal.WorkbookEditorsHandler@10697e2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2014-06-09 12:28:19.687 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.5.0_11
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_IE
+Framework arguments:  C:\MyIDLcodes\callisto_goes.pro
+Command-line arguments:  -os win32 -ws win32 -arch x86 C:\MyIDLcodes\callisto_goes.pro
+
+!ENTRY org.eclipse.jface 2 0 2014-06-09 12:28:24.265
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-06-09 12:28:24.265
+!MESSAGE A conflict occurred for CTRL+SPACE:
+Binding(CTRL+SPACE,
+	ParameterizedCommand(Command(com.rsi.idldt.ui.commands.cmdLine.ContentAssist,Command Line Content Assist,
+		Show Command Line Content Assist,
+		Category(com.rsi.idldt.ui.category.idl,IDL,IDL,true),
+		ActionDelegateHandlerProxy(null,com.rsi.idldt.actions.CommandLineKeyBindingAction:showContentAssist),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.cmdLineContext,,,system)
+Binding(CTRL+SPACE,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.contentAssist.proposals,Content Assist,
+		Content Assist,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@1fe910c)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.proEditorContext,,,system)
+Binding(CTRL+SPACE,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.contentAssist.proposals,Content Assist,
+		Content Assist,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@1fe910c)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-06-09 12:28:24.265
+!MESSAGE A conflict occurred for CTRL+U:
+Binding(CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.lowerCase,To Lower Case,
+		Changes the selection to lower case,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.CaseAction@1e4d6ef)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.proEditorContext,,,system)
+Binding(CTRL+U,
+	ParameterizedCommand(Command(com.rsi.idldt.ui.commands.cmdLine.EraseToStart,Command Line Erase to Start,
+		Command Line Erase to Start,
+		Category(com.rsi.idldt.ui.category.idl,IDL,IDL,true),
+		ActionDelegateHandlerProxy(null,com.rsi.idldt.actions.CommandLineKeyBindingAction:eraseToStart),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.cmdLineContext,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-06-09 12:28:24.265
+!MESSAGE A conflict occurred for CTRL+A:
+Binding(CTRL+A,
+	ParameterizedCommand(Command(com.rsi.idldt.ui.commands.cmdLine.Start,Command Line Goto Start,
+		Command Line Goto Start,
+		Category(com.rsi.idldt.ui.category.idl,IDL,IDL,true),
+		ActionDelegateHandlerProxy(null,com.rsi.idldt.actions.CommandLineKeyBindingAction:setSelectionStart),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.cmdLineContext,,,system)
+Binding(CTRL+A,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.selectAll,Select All,
+		Select all,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@db03a1)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.proEditorContext,,,system)
+Binding(CTRL+A,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.selectAll,Select All,
+		Select all,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@db03a1)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-06-09 12:28:24.265
+!MESSAGE A conflict occurred for CTRL+E:
+Binding(CTRL+E,
+	ParameterizedCommand(Command(org.eclipse.ui.window.openEditorDropDown,Quick Switch Editor,
+		Open the editor drop down list,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		org.eclipse.ui.internal.WorkbookEditorsHandler@cb5608,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.proEditorContext,,,system)
+Binding(CTRL+E,
+	ParameterizedCommand(Command(com.rsi.idldt.ui.commands.cmdLine.End,Command Line Goto End,
+		Command Line Goto End,
+		Category(com.rsi.idldt.ui.category.idl,IDL,IDL,true),
+		ActionDelegateHandlerProxy(null,com.rsi.idldt.actions.CommandLineKeyBindingAction:setSelectionEnd),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.rsi.idldt.ui.cmdLineContext,,,system)
+Binding(CTRL+E,
+	ParameterizedCommand(Command(org.eclipse.ui.window.openEditorDropDown,Quick Switch Editor,
+		Open the editor drop down list,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		org.eclipse.ui.internal.WorkbookEditorsHandler@cb5608,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
