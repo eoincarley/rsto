@@ -39,11 +39,11 @@ mkdir magnetometer\png
 move /y "C:\Inetpub\wwwroot\data\realtime\magnetometer\testmagpic\*.png" "C:\Inetpub\wwwroot\data\%Date:~-4,4%\%Date:~-7,2%\%Date:~-10,2%\magnetometer\png"
 move /y "C:\Inetpub\wwwroot\data\realtime\magnetometer\testmagpic\*.txt" "C:\Inetpub\wwwroot\data\%Date:~-4,4%\%Date:~-7,2%\%Date:~-10,2%\magnetometer\txt"
 
-mkdir SID\txt
-mkdir SID\png
+mkdir sid\txt
+mkdir sid\png
 
-move /y "S:\dailySID\*.png" "C:\Inetpub\wwwroot\data\%Date:~-4,4%\%Date:~-7,2%\%Date:~-10,2%\SID\png"
-move /y "S:\dailySID\*.txt" "C:\Inetpub\wwwroot\data\%Date:~-4,4%\%Date:~-7,2%\%Date:~-10,2%\SID\txt"
+move /y "S:\dailySID\*.png" "C:\Inetpub\wwwroot\data\%Date:~-4,4%\%Date:~-7,2%\%Date:~-10,2%\sid\png"
+move /y "S:\dailySID\*.txt" "C:\Inetpub\wwwroot\data\%Date:~-4,4%\%Date:~-7,2%\%Date:~-10,2%\sid\txt"
 
 ::-------------------------------------------------::
 ::
@@ -51,11 +51,11 @@ move /y "S:\dailySID\*.txt" "C:\Inetpub\wwwroot\data\%Date:~-4,4%\%Date:~-7,2%\%
 :: 
 ::-------------------------------------------------::
 
-mkdir LBA\fts
-mkdir LBA\png
+mkdir lba\fts
+mkdir lba\png
 
-move /y "C:\Inetpub\wwwroot\data\realtime\LBA\PNG\*.png" "C:\Inetpub\wwwroot\data\%Date:~-4,4%\%Date:~-7,2%\%Date:~-10,2%\LBA\png"
-move /y "C:\Inetpub\wwwroot\data\realtime\LBA\FTS\*.fit" "C:\Inetpub\wwwroot\data\%Date:~-4,4%\%Date:~-7,2%\%Date:~-10,2%\LBA\fts"
+move /y "C:\Inetpub\wwwroot\data\realtime\LBA\PNG\*.png" "C:\Inetpub\wwwroot\data\%Date:~-4,4%\%Date:~-7,2%\%Date:~-10,2%\lba\png"
+move /y "C:\Inetpub\wwwroot\data\realtime\LBA\FTS\*.fit" "C:\Inetpub\wwwroot\data\%Date:~-4,4%\%Date:~-7,2%\%Date:~-10,2%\lba\fts"
 
 ::-------------------------------------------------::
 ::
