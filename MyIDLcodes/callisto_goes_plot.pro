@@ -109,8 +109,8 @@ pro callisto_goes_plot, hourly=hourly, all_day=all_day
     ;
     ;
 
-    ;folder = 'C:\Inetpub\wwwroot\data\realtime\callisto\fts\'
-    folder = '/Users/eoincarley/Data/rsto_test/'
+    folder = 'C:\Inetpub\wwwroot\data\realtime\callisto\fts\'
+    ;folder = '/Users/eoincarley/Data/rsto_test/'
     cd, folder
     get_utc, current_time
 
@@ -274,7 +274,7 @@ pro callisto_goes_plot, hourly=hourly, all_day=all_day
     if keyword_set(all_day) then stamp_ephemeris, suntimes[0], suntimes[1]
 
     device, /close
-    set_plot, 'x'
+    set_plot, 'win'
 
     spawn,'convert -rotate "-90" '+ps_name+' '+png_name_generic
     spawn,'convert -rotate "-90" '+ps_name+' '+png_name
