@@ -17,8 +17,8 @@
 ::
 ::-------------------------------------------------::
 cd, 'C:\MyIDLcodes'
-.rnew callisto_hourly_windows
-callisto_hourly_windows,/backg
+.rnew callisto_goes_plot
+callisto_goes_plot, /hourly
 
 
 cd, 'C:\MyIDLcodes'
@@ -27,8 +27,7 @@ system_status
 
 
 cd, 'C:\MyIDLcodes'
-.rnew callisto_goes
-callisto_goes
+callisto_goes_plot, /all_day
 
 
 cd, 'C:\MyIDLcodes'
